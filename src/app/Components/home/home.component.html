@@ -1,0 +1,51 @@
+<div class="d-flex flex-column flex-md-row align-item-center p-3 px-md-9 md-10 bg-white border-bottom shadow-sm">
+    <h5 class="my-0 mr-md-auto font-weight-normal">USERS LIST</h5>
+    <button class="btn btn-dark" routerLink="/add-user">ADD NEW USER</button>
+
+</div>
+<br>
+<br>
+<div class="container">
+  <div class="row" style="width: 70%;margin-left: 15%;">
+    <div class="col-md-12">
+
+
+      <div *ngIf="userservice.users.length == 0">
+      <h3 style="font-weight: 200;">there's no users</h3>
+    </div>
+
+
+    <div *ngIf="userservice.users.length != 0">
+        <ul class="list-group">
+          <li class="list-group-item list-group-item-action" *ngFor="let user of userservice.users ; index as i">
+          {{user.name}}
+          <br>
+          <small style="color: red;">{{user.title}}</small>
+
+
+            
+            <button type="button" [routerLink]="['/user',i]" class="btn btn-success"
+            style="float: right; margin-left: 10px;">EDITE</button>
+
+
+            <button type="button" class="btn btn-danger" (click)="deleteUser(i)"
+            style="float: right;">DELETE</button>
+          </li>
+
+        </ul>
+
+
+       
+      
+    </div>
+
+
+
+
+    </div>
+  </div>
+
+</div>
+
+
+

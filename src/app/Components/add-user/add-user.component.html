@@ -1,0 +1,28 @@
+<div class="d-flex flex-column flex-md-row align-item-center p-3 px-md-9 md-10 bg-white border-bottom shadow-sm">
+    <h5 class="my-0 mr-md-auto font-weight-normal">ADD NEW USER</h5>
+</div>
+
+
+
+<div class="container" style="width: 70%;margin-left: 25%;margin-top: 5%;" >
+  <div class="row">
+    <div class="col-md-9">
+
+        <div class="form-group">
+            <label for="exampleInputEmail1">User Name:</label>
+            <input #username type="text" class="form-control"  placeholder="Enter user name">
+<br>
+            <label >User title:</label>
+            <input #usertitle type="text" class="form-control"  placeholder="Enter user title">
+  <br>
+
+            <button type="button" class="btn btn-success"
+             (click)="saveUser(username,usertitle)" style="margin-right: 10px;width: 20%;">Save</button>
+            <button type="button" class="btn btn-warning" style="width: 20%;"
+             routerLink="/">Cancel</button>
+          </div>
+    
+  
+    </div>
+  </div>
+</div>
